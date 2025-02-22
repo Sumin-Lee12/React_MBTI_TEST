@@ -5,6 +5,7 @@ import Signup from "../pages/Signup";
 import Login from "../pages/Login";
 import TestPage from "../pages/TestPage";
 import TestResultPage from "../pages/TestResultPage";
+import MainLayout from "../components/layout/MainLayout";
 
 const Router = () => {
 
@@ -12,14 +13,14 @@ const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route >
+        <Route element={<MainLayout/>}>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/testpage" element={<TestPage />} />
           <Route path="/testresultpage" element={<TestResultPage />} />
         </Route>
-        <Route path="/signup" element={<Login />} />
-        <Route path="/login" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </BrowserRouter>
   );

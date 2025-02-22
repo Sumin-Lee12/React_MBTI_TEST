@@ -1,11 +1,9 @@
 {
-  "todos": [
+  "user": [
     {
-      "id": 1,
-      "title": "리액트 공부하기",
-      "isDone": true
+      "email": "sample@example.com",
+      "password": 1234251,
+      "nickname": "samplenickname"
     }
   ]
 }
-
-// db.json을 터미널에서 실행시켜야 함 강의: 1-10
