@@ -7,7 +7,7 @@ const AuthForm = ({ mode, onSubmit }) => {
   
   // 무엇을 formData 에 넣어야 할까요?
   const [userInfo, setUserInfo] = useState({
-		email: "",
+		id: "",
     password: "",
     nickname: "",
   });
@@ -21,14 +21,16 @@ const AuthForm = ({ mode, onSubmit }) => {
     }
       }>
       <input
-        type="email"
-        name="email"
-        value={userInfo.email}
+        type="text"
+        name="id"
+        value={userInfo.id}
         autoComplete="username"
         onChange={(e) => {
-          setUserInfo({...userInfo, email:e.target.value});
+          setUserInfo({...userInfo, id:e.target.value});
         }}
-        placeholder="이메일"
+        minLength={4}
+        maxLength={15}
+        placeholder="아이디"
         required
       />
 
@@ -40,6 +42,8 @@ const AuthForm = ({ mode, onSubmit }) => {
         onChange={(e) => {
           setUserInfo({...userInfo, password:e.target.value});
         }}
+        minLength={4}
+        maxLength={15}
         placeholder="비밀번호"
         required
       />
@@ -52,6 +56,8 @@ const AuthForm = ({ mode, onSubmit }) => {
           onChange={(e) => {
             setUserInfo({...userInfo, nickname:e.target.value});
           }}
+          minLength={4}
+          maxLength={15}
           placeholder="닉네임"
           required
           className="w-full p-4 border border-gray-300 rounded-lg"

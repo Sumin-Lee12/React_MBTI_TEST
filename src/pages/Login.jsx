@@ -7,11 +7,11 @@ const Login = ({ setUser }) => {
   const navigate = useNavigate();
 
 
-  const handleLogin = async (formData) => {
+  const handleLogin = async (userInfo) => {
     try {
-      await login(formData);
+      await login(userInfo);
       navigate("/");
-    } catch (error) {
+    } catch {
       alert("로그인에 실패했습니다. 다시 시도해주세요.");
     }
   };
