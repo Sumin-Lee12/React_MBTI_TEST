@@ -4,6 +4,12 @@
       "email": "sample@example.com",
       "password": 1234251,
       "nickname": "samplenickname"
+    },
+    {
+      "id": "a88e",
+      "email": "sample5@gmail.com",
+      "password": "4",
+      "nickname": "4"
     }
   ]
 }

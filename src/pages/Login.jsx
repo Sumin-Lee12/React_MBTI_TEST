@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 import AuthForm from "../components/AuthForm";
-// import { login, getUserProfile } from "../api/auth";
+import { login, getUserProfile } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = ({ setUser }) => {
+  const navigate = useNavigate();
 
 
   const handleLogin = async (formData) => {
     try {
-
+      await login(formData);
+      navigate("/");
     } catch (error) {
       alert("로그인에 실패했습니다. 다시 시도해주세요.");
     }

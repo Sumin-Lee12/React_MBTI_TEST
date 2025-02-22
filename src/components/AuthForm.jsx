@@ -7,7 +7,7 @@ const AuthForm = ({ mode, onSubmit }) => {
   
   // 무엇을 formData 에 넣어야 할까요?
   const [userInfo, setUserInfo] = useState({
-		id: "",
+		email: "",
     password: "",
     nickname: "",
   });

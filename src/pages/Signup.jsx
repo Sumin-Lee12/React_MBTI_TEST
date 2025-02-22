@@ -15,7 +15,6 @@ const Signup = () => {
       navigate("/");
     } catch (error) {
       alert("회원가입에 실패했습니다. 다시 시도해주세요.");
-      console.log("회원가입 도중 에러 발생 ==> ", error)
     }
   };
 
