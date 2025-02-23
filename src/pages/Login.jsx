@@ -1,19 +1,16 @@
+import React, { useEffect } from "react";
 import AuthForm from "../components/AuthForm";
 import { userLogin, getUserProfile } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { login } from "../redux/slices/authSlice";
+import useUsersStore from "../zustand/useUsersStore";
 
 const Login = ({ setUser }) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const { createUser } = useUsersStore((state) => state);
 
   const handleLogin = async (userInfo) => {
     try {
-      await userLogin(userInfo);
-      console.log("userInfo 1 ==>", userInfo);
-      dispatch(login());
-      console.log("userInfo 1 ==>", userInfo);
+      await createUser(userInfo);
       navigate("/");
     } catch {
       alert("로그인에 실패했습니다. 다시 시도해주세요.");
@@ -24,13 +21,16 @@ const Login = ({ setUser }) => {
     <div>
       <div>
         <h1>로그인</h1>
-        <AuthForm mode="login" onSubmit={handleLogin} />
+        <AuthForm
+          mode="login"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleLogin();
+          }}
+        />
         <div>
           <p>
-            계정이 없으신가요?{" "}
-            <Link to="/signup">
-              회원가입
-            </Link>
+            계정이 없으신가요? <Link to="/signup">회원가입</Link>
           </p>
         </div>
       </div>

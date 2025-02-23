@@ -1,15 +1,20 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import useAuthStore from '../../zustand/useAuthStore';
 
 const Header = () => {
-  const isLogin = useSelector((state) => {state.auth.isLogin});
-  
+  const { isLogin, logout } = useAuthStore((state) => state);
+  const navigate = useNavigate();
+
+  const handleUserStatus = () => {
+    {isLogin ? logout() : navigate("/login")};
+  };
+
   return (
     <div>
       <div><Link to={"/"}/>HOME</div>
       <div>
-        <button>{isLogin ? '로그아웃' : '로그인'}</button>
+        <button type='button' onClick={handleUserStatus}>{isLogin ? '로그아웃' : '로그인'}</button>
       </div>
     </div>
   )}

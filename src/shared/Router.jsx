@@ -6,15 +6,15 @@ import Login from "../pages/Login";
 import TestPage from "../pages/TestPage";
 import TestResultPage from "../pages/TestResultPage";
 import MainLayout from "../components/layout/MainLayout";
-import { useSelector } from "react-redux";
+import useAuthStore from "../zustand/useAuthStore";
 
 const PublicRoute = () => {
-  const isLogin = useSelector((state) => {state.auth.isLogin});
+  const isLogin = useAuthStore((state) => state.isLogin);
   return <>{!isLogin ? <Outlet /> : <Navigate to="/" />}</>;
 };
 
 const ProtectedRoute = () => {
-  const isLogin = useSelector((state) => state.auth.isLogin);
+  const isLogin = useAuthStore((state) => state.isLogin);
   return <>{isLogin ? <Outlet /> : <Navigate to="/login" />}</>;
 };
 

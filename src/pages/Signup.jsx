@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import AuthForm from "../components/AuthForm";
 import { register } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate();
-  const [userInfos, setUserInfos] = useState("");
+  const {createUser, updateUser, deleteUser} = useUsersStore((state) => state);
+
 
   // 완성된 로직들이 아니에요! 참고만 하세요!
   const handleSignup = async (userInfo) => {
     try {
       await register(userInfo);
-      setUserInfos(userInfo);
+      createUser(userInfo);
       navigate("/login");
     } catch (error) {
       alert("회원가입에 실패했습니다. 다시 시도해주세요.");
