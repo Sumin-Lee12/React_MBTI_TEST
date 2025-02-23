@@ -9,15 +9,19 @@ const counterSlice = createSlice({
   initialState,
   reducers: {
     createUser: (state, action) => {
-      state.users = state.users.map((todo) => {
+      state.users = [...state.users, action.payload]
+    },
+    updateIsDone: (state, action) => {
+      state.users = state.users.map((user) => {
         if (user.id === action.payload) {
           user.isDone = !user.isDone;
         }
         return user;
       });
     },
-    deleteTodo: (state, action) => {
+    deleteUser: (state, action) => {
       state.users = state.users.filter((user) => user.id !== action.payload)
     },
   },
 });
+

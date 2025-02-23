@@ -1,15 +1,18 @@
 import React, { useEffect } from "react";
 import AuthForm from "../components/AuthForm";
-import { login, getUserProfile } from "../api/auth";
+import { handleLogin, getUserProfile } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../redux/slices/authSlice";
 
 const Login = ({ setUser }) => {
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
 
   const handleLogin = async (userInfo) => {
     try {
-      await login(userInfo);
+      await handleLogin(userInfo);
+      dispatch(login());
       navigate("/");
     } catch {
       alert("로그인에 실패했습니다. 다시 시도해주세요.");
