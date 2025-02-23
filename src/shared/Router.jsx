@@ -8,7 +8,7 @@ import TestResultPage from "../pages/TestResultPage";
 import { useSelector } from "react-redux";
 
 const PublicRoute = () => {
-  const isLogin = useSelector((state) => state.auth.isLogin);
+  const isLogin = useSelector((state) => {state.auth.isLogin});
   return <>{!isLogin ? <Outlet /> : <Navigate to="/login" />}</>;
 };
 
