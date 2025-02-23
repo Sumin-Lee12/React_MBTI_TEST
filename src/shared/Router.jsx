@@ -5,22 +5,16 @@ import Signup from "../pages/Signup";
 import Login from "../pages/Login";
 import TestPage from "../pages/TestPage";
 import TestResultPage from "../pages/TestResultPage";
-
+import { useSelector } from "react-redux";
 
 const PublicRoute = () => {
-  return (
-    <>
-      <Outlet />
-    </>
-  );
+  const isLogin = useSelector((state) => state.auth.isLogin);
+  return <>{!isLogin ? <Outlet /> : <Navigate to="/login" />}</>;
 };
 
 const PrivateRoute = () => {
-  return (
-    <>
-      <Outlet />
-    </>
-  );
+  const isLogin = useSelector((state) => state.auth.isLogin);
+  return <>{isLogin ? <Outlet /> : <Navigate to="/login" />}</>;
 };
 
 
@@ -38,9 +32,6 @@ export default function Router() {
           <Route path="/testpage" element={<TestPage />} />
           <Route path="/testresultpage" element={<TestResultPage />} />
         </Route>
-
-
-
       </Routes>
     </BrowserRouter>
   );

@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
 import AuthForm from "../components/AuthForm";
-import { handleLogin, getUserProfile } from "../api/auth";
+import { userLogin, getUserProfile } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/slices/authSlice";
@@ -11,7 +10,7 @@ const Login = ({ setUser }) => {
 
   const handleLogin = async (userInfo) => {
     try {
-      await handleLogin(userInfo);
+      await userLogin(userInfo);
       dispatch(login());
       navigate("/");
     } catch {

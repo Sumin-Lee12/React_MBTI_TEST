@@ -16,7 +16,7 @@ export const register = async (userInfo) => {
   }
 };
 
-export const handleLogin = async (userInfo) => {
+export const userLogin = async (userInfo) => {
   try {
     const {data} = await axios.post(`${API_URL}/login`, {
       id: userInfo.id,
