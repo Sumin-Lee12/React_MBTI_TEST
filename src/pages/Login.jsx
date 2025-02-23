@@ -6,11 +6,11 @@ import useUsersStore from "../zustand/useUsersStore";
 
 const Login = ({ setUser }) => {
   const navigate = useNavigate();
-  const { createUser } = useUsersStore((state) => state);
+  const { userLogin } = useUsersStore((state) => state);
 
   const handleLogin = async (userInfo) => {
     try {
-      await createUser(userInfo);
+      await userLogin(userInfo);
       navigate("/");
     } catch {
       alert("로그인에 실패했습니다. 다시 시도해주세요.");
@@ -23,10 +23,7 @@ const Login = ({ setUser }) => {
         <h1>로그인</h1>
         <AuthForm
           mode="login"
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleLogin();
-          }}
+          onSubmit={handleLogin}
         />
         <div>
           <p>
