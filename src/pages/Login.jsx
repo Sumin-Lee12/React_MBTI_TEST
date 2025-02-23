@@ -11,7 +11,9 @@ const Login = ({ setUser }) => {
   const handleLogin = async (userInfo) => {
     try {
       await userLogin(userInfo);
+      console.log("userInfo 1 ==>", userInfo);
       dispatch(login());
+      console.log("userInfo 1 ==>", userInfo);
       navigate("/");
     } catch {
       alert("로그인에 실패했습니다. 다시 시도해주세요.");

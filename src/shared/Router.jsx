@@ -5,14 +5,15 @@ import Signup from "../pages/Signup";
 import Login from "../pages/Login";
 import TestPage from "../pages/TestPage";
 import TestResultPage from "../pages/TestResultPage";
+import MainLayout from "../components/layout/MainLayout";
 import { useSelector } from "react-redux";
 
 const PublicRoute = () => {
   const isLogin = useSelector((state) => {state.auth.isLogin});
-  return <>{!isLogin ? <Outlet /> : <Navigate to="/login" />}</>;
+  return <>{!isLogin ? <Outlet /> : <Navigate to="/" />}</>;
 };
 
-const PrivateRoute = () => {
+const ProtectedRoute = () => {
   const isLogin = useSelector((state) => state.auth.isLogin);
   return <>{isLogin ? <Outlet /> : <Navigate to="/login" />}</>;
 };
@@ -26,11 +27,13 @@ export default function Router() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Route>
-        <Route element={<PrivateRoute/>}>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/testpage" element={<TestPage />} />
-          <Route path="/testresultpage" element={<TestResultPage />} />
+        <Route element={<ProtectedRoute/>}>
+          <Route element={<MainLayout/>}>
+            <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/testpage" element={<TestPage />} />
+            <Route path="/testresultpage" element={<TestResultPage />} />
+          </Route>
         </Route>
       </Routes>
     </BrowserRouter>
