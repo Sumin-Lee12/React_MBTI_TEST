@@ -11,13 +11,16 @@ export const getTestResults = async () => {
 
 
 export const createTestResult = async (resultData, user) => {
+    const currentNickname = localStorage.getItem("nickname");
+    const currentUserId = localStorage.getItem("userId");
+
     console.log("thisis resultdate==>", resultData, "thisis user==>", user)  
     const response = await axios.post(API_URL, {
-      "nickname": user.nickname,  
+      "nickname": currentNickname,  
       "result": resultData,
       "visibility": true,
       "date": Date.now(),
-      "userId": "현재 사용자 ID"
+      "userId": currentUserId,
     });
     return response.data;
 };

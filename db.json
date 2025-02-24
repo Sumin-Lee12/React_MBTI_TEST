@@ -27,6 +27,14 @@
     {
       "id": "69b1",
       "resultData": "ESTJ"
+    },
+    {
+      "id": "1011",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740414829016,
+      "userId": "12345"
     }
   ]
 }
