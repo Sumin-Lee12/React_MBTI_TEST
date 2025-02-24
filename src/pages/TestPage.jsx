@@ -9,13 +9,19 @@ const TestPage = ({ user }) => {
   const [result, setResult] = useState(null);
 
   const handleTestSubmit = async (answers) => {
-    const mbtiResult = calculateMBTI(answers);
-		/* Test 결과는 mbtiResult 라는 변수에 저장이 됩니다. 이 데이터를 어떻게 API 를 이용해 처리 할 지 고민해주세요. */
-    createTestResult(mbtiResult);
+    try {
+      const mbtiResult = calculateMBTI(answers);
+      /* Test 결과는 mbtiResult 라는 변수에 저장이 됩니다. 이 데이터를 어떻게 API 를 이용해 처리 할 지 고민해주세요. */
+      createTestResult(mbtiResult);
+      alert("제출이 성공하였습니다!")
+    } catch (error) {
+      alert("제출 실패! 아깝지만 다음 기회에...");
+      console.log("제출 실패! 오류 코드 ==> ", error); 
+    }
   };
 
   const handleNavigateToResults = () => {
-    navigate("/results");
+    navigate("/testresultpage");
   };
 
   return (
