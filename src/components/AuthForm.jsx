@@ -69,7 +69,7 @@ const AuthForm = ({ mode, onSubmit }) => {
           {...inputTailwind}
         />
       )}
-      <button type="submit" className="bg-red-400 w-1/2 px-6 py-3 rounded-full text-white">
+      <button type="submit" className="bg-orange-500 w-1/2 px-6 py-3 rounded-full text-white">
         {mode === "login" ? "로그인" : "회원가입"}
       </button>
     </form>

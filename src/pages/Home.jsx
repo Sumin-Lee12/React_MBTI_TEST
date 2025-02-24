@@ -11,8 +11,8 @@ const Home = () => {
 
   return (
     <div className="w-full min-h-screen py-11 flex flex-col items-center">
-      <h1 className="font-black text-5xl mb-7">무료 성격 테스트</h1>
-      <p className="text-xl mb-11">
+      <h1 className="font-black text-4xl mb-5 text-orange-500">무료 성격 테스트</h1>
+      <p className="text-base mb-24">
         자신의 성격 유형을 확인할 수 있도록 솔직하게 답변해 주세요.
       </p>
   
@@ -29,7 +29,7 @@ const Home = () => {
         ))}
       </div>
   
-      <Link to={"/testpage"} className="bg-red-400 px-6 py-3 rounded-full text-white font-">지금 테스트 받으러 가기</Link>
+      <Link to={"/testpage"} className="bg-orange-500 px-6 py-3 rounded-full text-white font-">지금 테스트 받으러 가기</Link>
     </div>
   );
   
