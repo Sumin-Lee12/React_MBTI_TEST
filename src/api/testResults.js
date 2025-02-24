@@ -4,7 +4,6 @@ const API_URL = 'http://localhost:5000/testResults';
 
 
 
-
 export const getTestResults = async () => {
   const response = await axios.get(API_URL);
   return response.data;
@@ -12,13 +11,8 @@ export const getTestResults = async () => {
 
 
 export const createTestResult = async (resultData) => {
-  try {
-    const response = await axios.post(API_URL, resultData);
-    alert("테스트 결과가 성공적으로 추가되었습니다.");
+    const response = await axios.post(API_URL, {resultData});
     return response.data;
-  } catch (error) {
-    console.error("테스트 결과 추가 중 오류 발생 ==> ", error);
-  }
 };
 
 
