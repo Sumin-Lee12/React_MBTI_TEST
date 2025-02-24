@@ -4,33 +4,16 @@ import Header from './Header';
 
 const MainLayout = () => {
   return (
-    <StContainer>
-        <StHeader>
-          <Header />
-        </StHeader>
-      <StContentWrapper>
-        <Outlet />
-      </StContentWrapper>
-    </StContainer>
+    <div className='h-full grid grid-rows-[50px_1fr]'>
+      <div className='row-span-1 z-50 bg-red-50'>
+        <Header />
+      </div>
+      <div className='row-start-2 overflow-y-auto'>
+      <Outlet />
+      </div>
+    </div>
   )
 }
 
 export default MainLayout;
 
-const StContainer = styled.div`
-  height: 100%;
-  display: grid;
-  grid-template-rows: 50px 1fr;
-`;
-
-const StHeader = styled.div`
-  grid-row: 1;
-  grid-column: span 2;
-  z-index: 100;
-`;
-
-const StContentWrapper = styled.div`
-  grid-row: 2;
-  grid-column: 2;
-  overflow-y: auto;
-`;

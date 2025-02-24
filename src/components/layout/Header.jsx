@@ -11,7 +11,7 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <div className='h-full flex justify-between items-center ml-5 mr-5'>
       <div><Link to={"/"}/>HOME</div>
       <div>
         <button type='button' onClick={handleUserStatus}>{isLogin ? '로그아웃' : '로그인'}</button>
