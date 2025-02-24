@@ -2,18 +2,17 @@ import React, { useEffect } from "react";
 import AuthForm from "../components/AuthForm";
 import { userLogin, getUserProfile } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
-import useUsersStore from "../zustand/useUsersStore";
 
-const Login = ({ setUser }) => {
+const Login = () => {
   const navigate = useNavigate();
-  const { userLogin } = useUsersStore((state) => state);
 
   const handleLogin = async (userInfo) => {
     try {
       await userLogin(userInfo);
       navigate("/");
-    } catch {
+    } catch (error) {
       alert("로그인에 실패했습니다. 다시 시도해주세요.");
+      console.log("this is error appeared during login process ==> ", error);
     }
   };
 
