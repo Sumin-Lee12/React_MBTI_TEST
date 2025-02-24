@@ -24,8 +24,10 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
         <Route element={<PublicRoute/>}>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route element={<MainLayout/>}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+          </Route>
         </Route>
         <Route element={<ProtectedRoute/>}>
           <Route element={<MainLayout/>}>
