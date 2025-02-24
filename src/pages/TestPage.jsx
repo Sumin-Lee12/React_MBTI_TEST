@@ -1,31 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TestForm from "../components/TestForm";
 import { calculateMBTI, mbtiDescriptions } from "../utils/mbtiCalculator";
 import { createTestResult } from "../api/testResults";
 import { useNavigate } from "react-router-dom";
 
-const TestPage = ({ user }) => {
+const TestPage = ({ user }) => { 
   const navigate = useNavigate();
   const [result, setResult] = useState(null);
 
 
+
+
+// 이게 mbti테스트 제출할 때 실시되는 코드인데 여기서 네넹 네! 엥 잠깐만용네네네네
+
   const handleTestSubmit = async (answers) => {
     try {
       const mbtiResult = calculateMBTI(answers);
-      /* Test 결과는 mbtiResult 라는 변수에 저장이 됩니다. 이 데이터를 어떻게 API 를 이용해 처리 할 지 고민해주세요. */
-      await createTestResult(mbtiResult);
+      console.log(mbtiResult)
+      await createTestResult(mbtiResult, user); 
       alert("제출이 성공하였습니다!")
-      handleNavigateToResults();
+      navigate("/testresultpage");
     } catch (error) {
-      alert("제출 실패! 아깝지만 다음 기회에...");
+      alert("제출 실패! 아쉽지만 다음 기회에...");
       console.log("제출 실패! 오류 코드 ==> ", error); 
     }
   };
 
-
-  const handleNavigateToResults = () => {
-    navigate("/testresultpage");
-  };
 
   return (
     <div className="w-full flex flex-col items-center justify-center bg-white">

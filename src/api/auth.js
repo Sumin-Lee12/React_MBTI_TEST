@@ -6,7 +6,7 @@ const API_URL = "https://www.nbcamp-react-auth.link";
 
 export const register = async (userInfo) => {
   try {
-    const {data} = await axios.post(`${API_URL}/register`, {
+    const { data } = await axios.post(`${API_URL}/register`, {
       id: userInfo.id,
       password: userInfo.password,
       nickname: userInfo.nickname,
@@ -28,10 +28,14 @@ export const userLogin = async (userInfo) => {
 
     alert("로그인이 완료되었습니다.");
     localStorage.setItem("accessToken", data.accessToken);
+    localStorage.setItem("userId", data.userId);
+    localStorage.setItem("nick", data.nickname);
 
+    // localStorage.getItem('nick')
     // 로그인한 유저 정보를 zustand 상태에 저장
-    const {login} = useAuthStore.getState();
+    const { login } = useAuthStore.getState();
     login([userInfo]); // 기존 users 배열을 덮어씌우거나, 필요에 따라 업데이트 가능
+    return data;
   } catch (error) {
     console.error("로그인 도중 오류 발생 ==> ", error);
   }

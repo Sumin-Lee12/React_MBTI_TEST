@@ -1,11 +1,15 @@
 import { create } from "zustand";
-import useAuthStore from "./useAuthStore";
 
 const useUsersStore = create((set) => ({
-  users: [], // 초기 상태
+  users: {
+    "userId": "유저 ID",
+    "nickname": "닉네임",
+  }, 
+  
+  // 초기 상태
 
-  // ✅ users 상태를 직접 설정하는 setUsers 추가
-  setUsers: (newUsers) => set({ users: newUsers }),
+  // ✅ users 상태를 직접 설정하는 setUsers 추가 
+  setUsers: (newUsers) => set({ users: newUsers }), 
 
   // 유저 추가
   createUser: (user) => set((state) => ({
