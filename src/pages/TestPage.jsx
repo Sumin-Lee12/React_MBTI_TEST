@@ -16,15 +16,19 @@ const TestPage = ({ user }) => {
   const handleTestSubmit = async (answers) => {
     try {
       const mbtiResult = calculateMBTI(answers);
-      console.log(mbtiResult)
       await createTestResult(mbtiResult, user); 
       alert("제출이 성공하였습니다!")
-      navigate("/testresultpage");
+      setResult(mbtiResult);
+      console.log("this is 결과 && is from 테스트서브밋함수 ==> ",setResult)
     } catch (error) {
       alert("제출 실패! 아쉽지만 다음 기회에...");
       console.log("제출 실패! 오류 코드 ==> ", error); 
     }
   };
+
+  const handleNavigateToResults = () => {
+    navigate("testresultpage/");
+  }
 
 
   return (
