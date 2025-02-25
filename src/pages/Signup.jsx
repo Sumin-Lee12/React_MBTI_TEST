@@ -22,9 +22,9 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <div>
-        <h1>회원가입</h1>
+    <div className="w-full min-h-screen py-11 flex flex-col items-center">
+      <div className="bg-blue-100 min-w-[500px]  min-h-[500px] p-5 rounded-xl flex justify-around items-center flex-col">
+        <h1 className="font-black text-3xl">회원가입</h1>
         <AuthForm mode="signup" onSubmit={handleSignup} />
         <div>
           <p>

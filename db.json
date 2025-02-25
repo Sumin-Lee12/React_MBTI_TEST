@@ -1,15 +1,216 @@
 {
-  "user": [
+  "testResults": [
     {
-      "email": "sample@example.com",
-      "password": 1234251,
-      "nickname": "samplenickname"
+      "id": "d7a1"
     },
     {
-      "id": "a88e",
-      "email": "sample5@gmail.com",
-      "password": "4",
-      "nickname": "4"
+      "id": "03af"
+    },
+    {
+      "id": "7ce8"
+    },
+    {
+      "id": "4276"
+    },
+    {
+      "id": "2c6d",
+      "resultData": "ESTJ"
+    },
+    {
+      "id": "40c6",
+      "resultData": "ESTJ"
+    },
+    {
+      "id": "ba1c",
+      "resultData": "ESTJ"
+    },
+    {
+      "id": "69b1",
+      "resultData": "ESTJ"
+    },
+    {
+      "id": "1011",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740414829016,
+      "userId": "12345"
+    },
+    {
+      "id": "dd73",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740414987569,
+      "userId": "12345"
+    },
+    {
+      "id": "d835",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740415055724,
+      "userId": "12345"
+    },
+    {
+      "id": "fb0a",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740415177209,
+      "userId": "12345"
+    },
+    {
+      "id": "1ce2",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740415341599,
+      "userId": "12345"
+    },
+    {
+      "id": "cb2d",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740415435698,
+      "userId": "12345"
+    },
+    {
+      "id": "e1c9",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740454534127,
+      "userId": "12345"
+    },
+    {
+      "id": "a4d5",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740454703533,
+      "userId": "12345"
+    },
+    {
+      "id": "1826",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740454739199,
+      "userId": "12345"
+    },
+    {
+      "id": "5368",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740454762479,
+      "userId": "12345"
+    },
+    {
+      "id": "dcdb",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740456307822,
+      "userId": "12345"
+    },
+    {
+      "id": "ccb5",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740459987052,
+      "userId": "12345"
+    },
+    {
+      "id": "353f",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740460008674,
+      "userId": "12345"
+    },
+    {
+      "id": "f5b1",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740460041106,
+      "userId": "12345"
+    },
+    {
+      "id": "35d6",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740460051545,
+      "userId": "12345"
+    },
+    {
+      "id": "5550",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740460061756,
+      "userId": "12345"
+    },
+    {
+      "id": "ab7f",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740460488581,
+      "userId": "12345"
+    },
+    {
+      "id": "252e",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740460533848,
+      "userId": "12345"
+    },
+    {
+      "id": "7eaf",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740460565173,
+      "userId": "12345"
+    },
+    {
+      "id": "eaca",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740461344248,
+      "userId": "12345"
+    },
+    {
+      "id": "72ba",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740461362697,
+      "userId": "12345"
+    },
+    {
+      "id": "4a0c",
+      "nickname": null,
+      "result": "ESTJ",
+      "visibility": true,
+      "date": 1740461638839,
+      "userId": "12345"
+    },
+    {
+      "id": "d57c",
+      "nickname": null,
+      "result": "INFP",
+      "visibility": true,
+      "date": 1740462025650,
+      "userId": "12345"
     }
   ]
 }
