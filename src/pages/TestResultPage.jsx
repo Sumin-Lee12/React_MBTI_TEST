@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import { getTestResults } from "../api/testResults";
-import { useNavigate } from "react-router-dom";
-
+import { mbtiDescriptions } from "../utils/mbtiCalculator";
 
 const TestResult = () => {
-  // api에서 mbti결과값 가져오기
-
   return (
-    <div className="w-full min-h-screen py-11 px-28 flex flex-col items-center">
-    <div className="bg-blue-100 w-full min-h-[400px] p-5 rounded-xl flex justify-center items-center flex-col">
-      <h2>테스트 결과: </h2>
-      <p></p>
-    </div>
+    <div className="w-full flex flex-col items-center justify-center bg-white">
+      <div className="bg-white rounded-lg p-8 max-w-3xl w-full h-full overflow-y-auto">
+        <h1 className="text-3xl font-bold text-primary-color mb-6">MBTI 설명</h1>
+        {Object.entries(mbtiDescriptions).map(([mbti, description]) => (
+          <div key={mbti} className="bg-blue-100 p-4 mb-10 rounded-lg">
+            <h2 className="text-xl font-bold mb-5">{mbti}</h2>
+            <p >{description}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

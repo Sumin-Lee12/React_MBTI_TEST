@@ -33,7 +33,7 @@ const TestPage = ({ user }) => {
 
   return (
     <div className="w-full flex flex-col items-center justify-center bg-white">
-      <div className="bg-white rounded-lg p-8 max-w-xl w-full h-full overflow-y-auto">
+      <div className="bg-white rounded-lg p-8 max-w-5xl h-full overflow-y-auto">
         {!result ? (
           <>
             <h1 className="text-3xl font-bold text-primary-color mt-10 mb-24 flex justify-center text-blue-500">
@@ -43,19 +43,24 @@ const TestPage = ({ user }) => {
           </>
         ) : (
           <>
-            <h1 className="text-3xl font-bold text-primary-color mb-6">
-              테스트 결과: {result}
-            </h1>
-            <p className="text-lg text-gray-700 mb-6">
-              {mbtiDescriptions[result] ||
-                "해당 성격 유형에 대한 설명이 없습니다."}
-            </p>
-            <button
-              onClick={handleNavigateToResults}
-              className="w-full bg-primary-color text-white py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-300 hover:text-[#FF5A5F]"
-            >
-              결과 페이지로 이동하기
-            </button>
+          <div className="flex flex-col items-center w-full">
+            <div className="bg-blue-100 w-full min-h-[400px] p-16 rounded-xl flex justify-between items-center flex-col">
+              <h1 className="text-3xl font-bold text-primary-color mb-6">
+                테스트 결과: {result}
+              </h1>
+              <p className="text-lg/[30px] text-gray-700 mb-10 p-5">
+                {mbtiDescriptions[result] ||
+                  "해당 성격 유형에 대한 설명이 없습니다."}
+              </p>
+              <button
+                onClick={handleNavigateToResults}
+                className="w-1/2 bg-primary text-red-500 py-3 rounded-full font-semibold hover:bg-primary-dark transition duration-300 hover:text-[#FF5A5F]"
+              >
+                결과 페이지로 이동하기
+              </button>
+            </div>
+          </div>
+            
           </>
         )}
       </div>
