@@ -4,7 +4,7 @@ import { calculateMBTI, mbtiDescriptions } from "../utils/mbtiCalculator";
 import { createTestResult } from "../api/testResults";
 import { useNavigate } from "react-router-dom";
 
-const TestPage = ({ user }) => { 
+const TestPage = () => { 
   const navigate = useNavigate();
   const [result, setResult] = useState(null);
 
@@ -16,10 +16,9 @@ const TestPage = ({ user }) => {
   const handleTestSubmit = async (answers) => {
     try {
       const mbtiResult = calculateMBTI(answers);
-      await createTestResult(mbtiResult, user); 
+      await createTestResult(mbtiResult); 
       alert("제출이 성공하였습니다!")
       setResult(mbtiResult);
-      console.log("this is 결과 && is from 테스트서브밋함수 ==> ",setResult)
     } catch (error) {
       alert("제출 실패! 아쉽지만 다음 기회에...");
       console.log("제출 실패! 오류 코드 ==> ", error); 
@@ -27,7 +26,7 @@ const TestPage = ({ user }) => {
   };
 
   const handleNavigateToResults = () => {
-    navigate("testresultpage/");
+    navigate("/testresultpage");
   }
 
 

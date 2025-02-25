@@ -43,7 +43,7 @@ export const userLogin = async (userInfo) => {
 
 export const getUserProfile = async () => {
   try {
-    const token = localStorage.getItem("accessToken");
+    const token = JSON.parse(localStorage.getItem("accessToken"));
     if (!token) {
       console.log("토큰이 없습니다!");
       return;
@@ -60,11 +60,10 @@ export const getUserProfile = async () => {
   }
 };
 
-export const updateProfile = async () => {
+export const updateProfile = async ({ accessToken, formData }) => {
   try {
-    const response = await axios.patch(`${API_URL}/profile`, {
-      headers: {},
-      body: {},
+    const response = await axios.patch(`${API_URL}/profile`, formData, {
+      headers: { Authorization: `Bearer ${accessToken}` },
     });
     alert("회원가입이 완료되었습니다.");
     return response.data;
